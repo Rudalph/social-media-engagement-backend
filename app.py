@@ -299,6 +299,29 @@ def get_response():
     return jsonify(json_output=json_output)
 
 
+import requests
+from apscheduler.schedulers.background import BackgroundScheduler
+# Dummy route
+@app.route('/keep_alive', methods=['GET'])
+def keep_alive():
+    return "Instance is alive!", 200
+
+# Function to send dummy request
+def send_dummy_request():
+    try:
+        # Replace 'http://your-domain.com/keep_alive' with your deployed API URL
+        response = requests.get('https://medisense-backend.onrender.com/keep_alive')
+        print(f"Keep-alive request sent: {response.status_code}")
+    except Exception as e:
+        print(f"Failed to send keep-alive request: {e}")
+
+# Scheduler to run the dummy request every 10 minutes
+scheduler = BackgroundScheduler()
+scheduler.add_job(send_dummy_request, 'interval', minutes=1)
+scheduler.start()
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
