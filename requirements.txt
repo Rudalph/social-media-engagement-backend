@@ -1,0 +1,7 @@
+Flask
+Flask-Cors
+langchain-chroma
+langchain
+langchain-community
+langchain-huggingface
+langchain-groq
