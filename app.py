@@ -310,7 +310,7 @@ def keep_alive():
 def send_dummy_request():
     try:
         # Replace 'http://your-domain.com/keep_alive' with your deployed API URL
-        response = requests.get('https://medisense-backend.onrender.com/keep_alive')
+        response = requests.get('https://social-media-engagement-backend.onrender.com/keep_alive')
         print(f"Keep-alive request sent: {response.status_code}")
     except Exception as e:
         print(f"Failed to send keep-alive request: {e}")
