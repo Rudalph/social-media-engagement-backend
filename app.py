@@ -89,8 +89,7 @@ def ask_question():
 
 
 
-from flask import Flask, jsonify
-from flask_cors import CORS
+
 import requests
 from typing import Optional
 import re
@@ -290,8 +289,7 @@ def generate_json_output():
 
 
 
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+
 import requests
 from typing import Optional
 import re
