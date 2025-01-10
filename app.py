@@ -11,7 +11,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 
 app = Flask(__name__)
-CORS(app) 
+CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "https://supermind-hackathon-assignment.vercel.app/"]}})
 
 # file_path = "sample_dataset.csv"
 
